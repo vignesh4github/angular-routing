@@ -1,0 +1,27 @@
+<div class="container">
+        <li routerLinkActive = "active" ><a routerLink ="/homepage"> Home Page </a></li>
+        <li routerLinkActive = "active" ><a routerLink ="/contactus"> Contact us </a></li>
+        
+    <form class ="form-horizontal" (ngSubmit) = "onSubmit()" #f ="ngForm" >
+    
+    <div class="form-group">
+    <label for="username"> USER NAME </label>
+    <input type="text" class="form-control" id= "username"  ngModel name ="username" required placeholder="Enter yours User name">
+    </div>
+    
+    <div class="form-group">
+    <label for="useremail"> EMAIL </label>
+    <input type="email" class="form-control" id= "email"  ngModel name ="useremail" required placeholder="Enter yours Email Id" #email = "ngModel">
+    <span class="help-block" *ngIf="!email.valid && email.touched"> Enter a valid email id </span>
+    </div>
+    
+    <div class="form-group">
+    <label for="userpassword"> PASSWORD </label>
+    <input type="password" class="form-control" ngModel name="userpassword" id="userpassword" required placeholder="Enter yours Password">
+    </div>
+    
+    <button type="submit" class="btn btn-success" [disabled] = "!f.valid" > Submit </button>
+    <button type="reset" class="btn btn-primary" name="button"> Reset </button>
+    
+    </form>
+    </div>
